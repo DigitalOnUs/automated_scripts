@@ -20,9 +20,12 @@ kubectl apply -f https://git.io/weave-kube
 #Creating namespace
 kubectl create namespace devops
 #Adding services
-bash services/addservices.sh
+cd services/
+bash addservices.sh
+cd ..
 #Adding Pods
-bash pods/addpods.sh
+cd pods/
+bash addpods.sh
 
 
 echo "Run kubectl get svc,pods -n devops to see the containers"
