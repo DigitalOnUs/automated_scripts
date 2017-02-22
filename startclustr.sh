@@ -1,7 +1,7 @@
 #!/bin/bash
 #Updating packages and adding new repository
 apt-get update
-apt-get upgrade | yes
+apt-get upgrade -y
 curl https://packages.cloud.google.com/apt/doc/apt-key.gpg | apt-key add -
 echo "deb http://apt.kubernetes.io/ kubernetes-xenial main" >> /etc/apt/sources.list
 apt-get update
