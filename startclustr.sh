@@ -14,7 +14,7 @@ kubeadm reset
 kubeadm init 
 #Getting secret token to join into the cluster
 #To get a minion run this command kubeadm join --token=$tokenid  $privateinstanceip
-kubectl -n kube-system get secret clusterinfo -o yaml | grep token-map | awk '{print $2}' | base64 -d | sed "s|{||g;s|}||g;s|:|.|g;s/\"//g;" | xargs echo
+#kubectl -n kube-system get secret clusterinfo -o yaml | grep token-map | awk '{print $2}' | base64 -d | sed "s|{||g;s|}||g;s|:|.|g;s/\"//g;" | xargs echo
 #Installing feature for CNI
 kubectl apply -f https://git.io/weave-kube
 #Creating namespace
