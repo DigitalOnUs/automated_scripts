@@ -22,7 +22,7 @@ spec:
      path: /logs/nginx
   containers:
   - name: proxy
-    image: accenture/adop-nginx:0.2.0
+    image: digitalonus/proxy
     env:
 #    - name: "constraint:tier"
 #      value: "=public"
