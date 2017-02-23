@@ -11,7 +11,7 @@ apt-get install -y kubelet nfs-common kubeadm kubectl kubernetes-cni docker-engi
 #kubeadm reset all cluster if someone exist
 kubeadm reset
 #Creating new cluster
-kubeadm init 
+kubeadm init --token=Pipfg0.EfejN8z8tPCJsJ8B
 #Getting secret token to join into the cluster
 #To get a minion run this command kubeadm join --token=$tokenid  $privateinstanceip
 #kubectl -n kube-system get secret clusterinfo -o yaml | grep token-map | awk '{print $2}' | base64 -d | sed "s|{||g;s|}||g;s|:|.|g;s/\"//g;" | xargs echo
