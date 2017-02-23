@@ -7,3 +7,7 @@ echo "deb http://apt.kubernetes.io/ kubernetes-xenial main" >> /etc/apt/sources.
 apt-get update
 #Installing kubernetes and docker engine
 apt-get install -y kubelet nfs-common kubeadm kubectl kubernetes-cni docker-engine git
+
+sleep 30
+
+kubeadm joint --token=Pipfg0.EfejN8z8tPCJsJ8B $masterip
