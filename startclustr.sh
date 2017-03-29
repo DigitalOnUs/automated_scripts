@@ -9,7 +9,7 @@ apt-get update
 apt-get install -y kubelet nfs-common kubeadm kubectl kubernetes-cni docker-engine git
 #comment kubeadm reset if you wil create a new cluster without erase the actual cluster
 #kubeadm reset all cluster if someone exist
-kubeadm reset
+#kubeadm reset
 #Creating new cluster
 kubeadm init --token=y2bcde.zv1gcyg9wn2ov12o
 #Getting secret token to join into the cluster
