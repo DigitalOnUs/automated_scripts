@@ -10,8 +10,15 @@ apt-get install -y kubelet nfs-common kubeadm kubectl kubernetes-cni docker-engi
 #comment kubeadm reset if you wil create a new cluster without erase the actual cluster
 #kubeadm reset all cluster if someone exist
 #kubeadm reset
+sudo sed -i -e 's/$KUBELET_NETWORK_ARGS//g' /etc/systemd/system/kubelet.service.d/10-kubeadm.conf
+sudo systemctl daemon-reload
+sudo systemctl restart kubelet.service
+sudo kubeadm reset
 #Creating new cluster
 kubeadm init --token=y2bcde.zv1gcyg9wn2ov12o
+sudo cp /etc/kubernetes/admin.conf $HOME/
+sudo chown $(id -u):$(id -g) $HOME/admin.conf
+export KUBECONFIG=$HOME/admin.conf
 #Getting secret token to join into the cluster
 #To get a minion run this command kubeadm join --token=$tokenid  $privateinstanceip
 #kubectl -n kube-system get secret clusterinfo -o yaml | grep token-map | awk '{print $2}' | base64 -d | sed "s|{||g;s|}||g;s|:|.|g;s/\"//g;" | xargs echo
