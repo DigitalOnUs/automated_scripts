@@ -27,6 +27,7 @@ kubectl apply -f https://git.io/weave-kube
 #Creating namespace
 kubectl create namespace devops
 #Adding services
+kubectl taint nodes --all
 cd services/
 bash addservices.sh
 cd ..
