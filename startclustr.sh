@@ -10,6 +10,7 @@ apt-get update
 #Installing kubernetes and docker engine
 apt-get install -y docker-engine=1.11.2-0~xenial
 apt-get install -y kubelet=1.6.1-00 kubeadm=1.6.1-00 kubectl=1.6.1-00 kubernetes-cni=0.5.1-00
+apt-get install -y nfs-common
 
 #Creating new cluster
 kubeadm init --token=y2bcde.zv1gcyg9wn2ov12o
